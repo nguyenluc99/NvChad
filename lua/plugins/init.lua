@@ -15,6 +15,20 @@ return packer.startup(function()
    -- this is the nvchad core repo containing utilities for some features like theme swticher, no need to lazy load
    use "Nvchad/extensions"
    use "nvim-lua/plenary.nvim"
+   use {
+       'neovim/nvim-lspconfig',
+       'williamboman/nvim-lsp-installer',
+  use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }  }
+   use {
+       'kyazdani42/nvim-tree.lua',
+       requires = {
+         'kyazdani42/nvim-web-devicons', -- optional, for file icon
+       },
+       config = function() require'nvim-tree'.setup {} end
+   }
 
    use {
       "wbthomason/packer.nvim",
@@ -230,6 +244,7 @@ return packer.startup(function()
                require("core.mappings").telescope_media()
             end,
          },
+         { 'nvim-telescope/telescope-live-grep-raw.nvim' }
       },
       config = override_req("telescope", "plugins.configs.telescope"),
       setup = function()

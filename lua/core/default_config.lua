@@ -13,7 +13,7 @@ M.options = {
    hidden = true,
    ignorecase = true,
    smartcase = true,
-   mapleader = " ",
+   mapleader = "\\",
    mouse = "a",
    number = true,
    numberwidth = 2,
@@ -44,6 +44,7 @@ M.options = {
 
 M.ui = {
    hl_override = "", -- path of your file that contains highlights
+   width=45,
    italic_comments = false,
    theme = "onedark", -- default theme
 
@@ -83,9 +84,9 @@ M.plugins = {
          lazy_load = true,
 
          ui = {
+            width = 25,
             allow_resize = true,
             side = "left",
-            width = 25,
             hide_root_folder = true,
          },
       },
@@ -213,7 +214,7 @@ M.mappings.plugins = {
    },
 
    nvimtree = {
-      toggle = "<C-n>",
+      toggle = "<leader>z",
       focus = "<leader>e",
    },
 
